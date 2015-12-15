@@ -27,13 +27,19 @@ Floor:
 	var touchList = [];
 	
 	zoom_el.ontouchstart = function(event){
-		touchList = event.touches;
+		
+		var list = [];
+		for(i=0; i<event.touches.length; i++){
+			var item = {};
+			item[event.touches[i].identifier] = event.touches[i];
+			list.push(item);
+		}
+		touchList = list;
 		console.log(touchList);
 	}
 	
 	zoom_el.ontouchmove = function(event){
-		touchList = event.touches;
-		console.log(touchList);
+		
 	}
 	
 	
