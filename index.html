@@ -19,5 +19,25 @@ Floor:
 <div id="zoom">
 	<img src="first-floor-optimized.png">
 </div>
+	
+<script>
+
+	var zoom_el = document.getElementById('zoom');
+	
+	var touchList = [];
+	
+	zoom_el.ontouchstart = function(event){
+		touchList = event.touches;
+		console.log(touchList);
+	}
+	
+	zoom_el.ontouchmove = function(event){
+		touchList = event.touches;
+		console.log(touchList);
+	}
+	
+	
+	
+</script>
 </body>
 </html>
